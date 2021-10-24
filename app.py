@@ -1,10 +1,4 @@
 import numpy as np
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# import cv2
-# import tensorflow as tf
-# from PIL import Image
-# import os
 from tensorflow.keras.models import load_model
 import gradio as gr
 # import requests
