@@ -58,7 +58,7 @@ def classify_sign(img):
     return {classes[i+1]: float(pred2[i]) for i in range(len(classes)-1)}
 
 
-model = load_model("my_modeAdded l.h5")
+model = load_model("my_model.h5")
 image = gr.inputs.Image(type='pil', image_mode="RGB")
 label = gr.outputs.Label(num_top_classes=5)
 title = 'Sign Detective!'
