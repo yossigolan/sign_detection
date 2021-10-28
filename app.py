@@ -53,13 +53,14 @@ def classify_sign(img):
     img = np.expand_dims(img, axis=0)
     img = np.array(img)
     pred = model.predict_classes([img])[0]
+    pred2 = model.predict_proba([img]).flatten()
     #     pred = model.predict([img]).argmax()
-    return classes[pred + 1]
+    return {classes[i+1]: float(pred2[i]) for i in range(len(classes)-1)}
 
 
-model = load_model("my_model.h5")
+model = load_model("my_modeAdded l.h5")
 image = gr.inputs.Image(type='pil', image_mode="RGB")
-label = gr.outputs.Label()
+label = gr.outputs.Label(num_top_classes=5)
 title = 'Sign Detective!'
 description = 'Snap a picture of a road sign (or choose one from the samples below) and find out which sign it is!'
 sample_images = [["00001.png"], ['00003.png'], ['00018.png'], ['00031.png'], ['00093.png']]
