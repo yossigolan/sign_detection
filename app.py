@@ -63,7 +63,8 @@ image = gr.inputs.Image(type='pil', image_mode="RGB")
 label = gr.outputs.Label(num_top_classes=5)
 title = 'Sign Detective!'
 description = 'Snap a picture of a road sign (or choose one from the samples below) and find out which sign it is!'
-sample_images = [["00001.png"], ['00003.png'], ['00018.png'], ['00031.png'], ['00093.png']]
+sample_images = [["00001.png"], ['00003.png'], ['00018.png'], ['00031.png'], ['00093.png'],
+                 ['00023.png'], ['00053.png'], ['00057.png'],['00070.png'],['00094.png'] ]
 
 gr.Interface(fn=classify_sign, inputs=image,
              outputs=label, examples=sample_images,
